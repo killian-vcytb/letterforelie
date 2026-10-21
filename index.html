@@ -160,6 +160,7 @@ body{
 }
 .chart-sheet .sub{text-align:center;font-size:14px;color:var(--pink-3);margin-bottom:12px;font-style:italic}
 svg.figure-chart{width:100%;height:auto;display:block}
+.chart-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
 .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;font-size:14px;line-height:1.45}
 .legend div{padding:10px 12px;background:var(--blush);border-left:3px solid;border-radius:2px}
 .legend .gold{border-color:#d4af37}
@@ -215,18 +216,30 @@ svg.figure-chart{width:100%;height:auto;display:block}
 }
 #nav button:hover{background:var(--blush)}
 
-@media (max-width:640px){
-  .sheet{padding:30px 22px;font-size:23px}
-  .sheet h1{font-size:40px}
-  .sheet .big{font-size:28px}
-  .legend{grid-template-columns:1fr}
+@media (max-width:700px){
+  #stage{width:100vw;height:100vh;height:100dvh}
+  .envelope{width:270px;height:176px}
+  .envelope .note{left:20px;right:20px;top:16px;height:136px;padding:18px 16px}
+  .envelope .front::after{inset:0}
+  .open-btn{font-size:18px;padding:12px 30px}
+  .sheet{width:92%;max-height:calc(100dvh - 120px);padding:26px 22px;font-size:24px;line-height:1.45}
+  .sheet h1{font-size:46px;margin-bottom:8px}
+  .sheet .big{font-size:32px;line-height:1.3}
+  .sheet .signature{font-size:28px}
+  .sheet .sig-gold{font-size:30px}
+  .chart-sheet h2{font-size:34px}
+  .chart-sheet .sub{font-size:17px}
+  .chart-scroll svg.figure-chart{width:600px;max-width:none}
+  .legend{grid-template-columns:1fr;font-size:17px}
+  .elie-photo{height:200px;margin-top:14px}
+  .about-sheet h2{font-size:38px}
+  .about-list li{font-size:24px;padding-left:24px}
+  .about-photos{gap:10px}
+  .about-photos img{max-width:47%;height:auto;width:47%}
+  .sleep-art{width:120px;right:10px;bottom:-4px}
+  #nav{bottom:12px;gap:10px}
+  #nav button{padding:9px 16px;font-size:15px;background:#fff}
 }
-/* Solid colors so every page keeps its look on any browser or theme */
-html,body{background:#000 !important;background-color:#000 !important}
-.sheet{background:#ffffff !important;background-color:#ffffff !important;color:#14193a !important}
-.sheet h1,.sheet h2{color:#ff1f7a !important}
-.sheet .big,.sheet .tag,.sheet .signature:not(.sig-gold){color:#ff1f7a !important}
-.sheet .sig-gold{color:transparent !important;background:linear-gradient(180deg,#fff4bf 0%,#f0cc5a 35%,#d4a72c 60%,#8a6410 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 0 #fff0a8) drop-shadow(0 1px 1px rgba(60,40,0,.2))}
 </style>
 </head>
 <body>
@@ -263,7 +276,7 @@ html,body{background:#000 !important;background-color:#000 !important}
       <h2>A Scientific Analysis of Elie</h2>
       <div class="sub">Measured over time, on a very serious scale</div>
 
-      <svg class="figure-chart" viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" aria-label="Chart of Elie's qualities">
+      <div class="chart-scroll"><svg class="figure-chart" viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" aria-label="Chart of Elie's qualities">
         <!-- Stick figure -->
         <g stroke="#111111" stroke-width="4" fill="none" stroke-linecap="round">
           <circle cx="60" cy="70" r="20" fill="#ffffff"/>
@@ -303,7 +316,7 @@ html,body{background:#000 !important;background-color:#000 !important}
           <text x="550" y="70" font-size="13" fill="#111111" font-weight="bold">Looks smart</text>
           <text x="550" y="293" font-size="13" fill="#ff1414" font-weight="bold">Meanness</text>
         </g>
-      </svg>
+      </svg></div>
 
       <div class="legend">
         <div class="gold"><b>Gold: Beauty</b>Constant, and always at the very top of the chart.</div>
